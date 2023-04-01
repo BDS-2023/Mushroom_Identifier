@@ -46,7 +46,7 @@ Densenet - 250 labels :
 
 VGG19 - 100 labels :
 
-![My Image](Images/VGG19_loss_val_acc_100_2.jpg)
+![My Image](Images/VGG199_val_acc_loss_final.jpg)
 
 
 
