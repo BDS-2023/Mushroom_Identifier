@@ -60,5 +60,8 @@ For people who desire to use our work, please be careful about the folders and p
 Please feel free to mail us or contact us for additional information :
 
 Joffrey Lemery :
+
+<a href="https://www.linkedin.com/in/kunwar-nakul-singh-bhati/" target="_blank"><img src="[https://raw.githubusercontent.com/nakulbhati/nakulbhati/master/contain/in.png](https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg)" alt="LinkedIn" width="30"></a>
+                                                                                     
 [<img align="left" alt="JoffreyLemery | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />]
 [linkedin]: https://https://www.instagram.com/jojo_lmth_cpdv/
