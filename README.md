@@ -27,16 +27,13 @@ Objectives :
 
 ![My Image](Images/DE_big.png)
 
- 
 Currently deployed : 
 
 ![My Image](Images/DE_small.png)
 
+## Models accuracy
 
-# Models accuracy : 
-
-
-Densenet - 100 labels :
+Densenet - 100 labels : 
 
 ![My Image](Images/Densenet_100.png)
 
@@ -44,9 +41,8 @@ Densenet - 250 labels :
 
 ![My Image](Images/Densenet_250.png)
 
-VGG19 - 100 labels :
+VGG19 - 100 labels : 
 
-![My Image](Images/VGG199_100.png)
-
+![My Image](Images/VGG19_100.png)
 
 
