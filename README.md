@@ -38,15 +38,15 @@ Currently deployed :
 
 Densenet - 100 labels :
 
-![My Image](Images/densenet_loss_val_acc_100_2.png)
+![My Image](Images/densenet_100.png)
 
 Densenet - 250 labels :
 
-![My Image](Images/densenet_loss_val_acc_250.png)
+![My Image](Images/densenet_l250.png)
 
 VGG19 - 100 labels :
 
-![My Image](Images/VGG199_val_acc_loss_final.jpg)
+![My Image](Images/VGG199_100.png)
 
 
 
