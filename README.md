@@ -33,4 +33,20 @@ Currently deployed :
 ![My Image](Images/DE_small.png)
 
 
-#
+# Models accuracy : 
+
+
+Densenet - 100 labels :
+
+![My Image](Images/densenet_loss_val_acc_100_2.png)
+
+Densenet - 250 labels :
+
+![My Image](Images/densenet_loss_val_acc_250.png)
+
+VGG19 - 100 labels :
+
+![My Image](Images/VGG19_loss_val_acc_100_2.png)
+
+
+
