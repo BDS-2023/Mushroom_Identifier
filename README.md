@@ -1,6 +1,6 @@
 # Mushroom_recognition
 CNN  project for Mushroom recognition (Keras - FastAI - Docker)
-
+The project and the app is detailed on the folowing streamlit : http://13.39.179.55:8501/
 
 # Project's presentation
 
@@ -9,6 +9,9 @@ These project is based on two axis :
 - The DataScience part :
     - A CNN Keras (VGG19, VGG16, Xception, Densenet)
     - A CNN FastAI (Densenet161)
+
+The DS part propose CNN architecture optimisation, parameters determination, and interpretability analysis (GradCam, GuidedBackPropagation)
+
 - The Data Engineering part
     - Docker files for Frontend (Streamlit + API calls)
     - Docker files for backtend (FAST API + CNN prediction)
@@ -45,4 +48,10 @@ VGG19 - 100 labels :
 
 ![My Image](Images/VGG19_100.png)
 
+
+# Project Utilization
+
+For people who desire to use our work, please be careful about the folders and path.
+- In DS parts, each files has it's own path. Be sur to use yours
+- In DE parts, a private bucket is used to store the data and models used by the frontend and backend. Be sur to do the same or to go on a local solution
 
