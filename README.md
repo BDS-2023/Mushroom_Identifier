@@ -38,11 +38,11 @@ Currently deployed :
 
 Densenet - 100 labels :
 
-![My Image](Images/densenet_100.png)
+![My Image](Images/Densenet_100.png)
 
 Densenet - 250 labels :
 
-![My Image](Images/densenet_l250.png)
+![My Image](Images/Densenet_250.png)
 
 VGG19 - 100 labels :
 
