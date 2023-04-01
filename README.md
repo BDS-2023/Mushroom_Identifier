@@ -61,6 +61,6 @@ Please feel free to mail us or contact us for additional information :
 
 Joffrey Lemery :
 
-<a href="https://www.linkedin.com/in/kunwar-nakul-singh-bhati/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>
+<a href="https://www.linkedin.com/in/joffrey-lemery-b740a5112/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>
 
                                                                                     
