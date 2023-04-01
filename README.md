@@ -61,18 +61,18 @@ Please feel free to mail us or contact us for additional information :
 
 Joffrey Lemery :
 - joffrey.lemery.jl@gmail.com
-<a href="https://www.linkedin.com/in/joffrey-lemery-b740a5112/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>
+- <a href="https://www.linkedin.com/in/joffrey-lemery-b740a5112/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>
 
 Thomas Louvradoux :
 - louvradouxthomas.jl@msn.com
-<a href="https://www.linkedin.com/in/thomas-louvradoux-023b231a6/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>    
+- <a href="https://www.linkedin.com/in/thomas-louvradoux-023b231a6/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>    
 
 Julien Le Bot :
 - lebot.julien@gmail.com
-<a href="https://www.linkedin.com/in/julien-le-bot-133a5625/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>     
+- <a href="https://www.linkedin.com/in/julien-le-bot-133a5625/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>     
 
 
 Gaetan Wendling:
 - gaetan@fwendling.org
-<a href="https://www.linkedin.com/in/gaetan-wendling/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>     
+- <a href="https://www.linkedin.com/in/gaetan-wendling/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="30"></a>     
 
