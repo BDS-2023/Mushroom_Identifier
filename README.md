@@ -15,4 +15,22 @@ These project is based on two axis :
 
 The current application is deployed on AWS (public and private subnets) according to the following architecture :
 
+## AWS architecture : 
+
+AWS architecture : 
+
+![My Image](Images/AWS.png)
+
+## Micro-service and API :
+
+Objectives : 
+
+![My Image](Images/DE_big.png)
+
+ 
+Currently deployed : 
+
 ![My Image](Images/DE_small.png)
+
+
+#
