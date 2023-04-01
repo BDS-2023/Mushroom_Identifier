@@ -49,9 +49,16 @@ VGG19 - 100 labels :
 ![My Image](Images/VGG19_100.png)
 
 
-# Project Utilization
+# Project utilization
 
 For people who desire to use our work, please be careful about the folders and path.
 - In DS parts, each files has it's own path. Be sur to use yours
 - In DE parts, a private bucket is used to store the data and models used by the frontend and backend. Be sur to do the same or to go on a local solution
 
+# Contacts 
+
+Please feel free to mail us or contact us for additional information :
+
+Joffrey Lemery : 
+[<img align="left" alt="JoffreyLemery | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[linkedin]: https://www.linkedin.com/in/joffrey-lemery-b740a5112/
