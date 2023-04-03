@@ -1,6 +1,6 @@
 # Mushroom_recognition
 CNN  project for Mushroom recognition (Keras - FastAI - Docker)
-The project and the app is detailed on the folowing streamlit : http://13.39.179.55:8501/
+The project and the app is detailed on the folowing streamlit : http://15.188.106.69:8501/
 
 # Project's presentation
 
