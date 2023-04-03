@@ -69,3 +69,50 @@ with c4 :
     st.write("Gaëtan Overflood les channels de GIF.\nC'est lui qui à ecrit ces bêtises.\nEst en train d'essayer de faire un site\njolie." )
 
 st.markdown("""---""")
+
+with st.sidebar:
+    st.markdown("""---""")
+    with st.expander("Joffrey Lemery"):
+        col1, col2, col3 = st.columns([1,0.5,1])  
+        with col1: 
+            st.image(read_image_bucket( image_path + 'LinkedIn_Logo_blank.png'),channels="RGB", output_format="auto") 
+            st.image(read_image_bucket( image_path + 'github_blank.png'),channels="RGB", output_format="auto")
+        with col3:
+            st.write("[Linkedin](https://www.linkedin.com/in/joffrey-lemery-b740a5112/)")
+            st.write("")
+            st.write("")
+            st.write("[GitHub](https://github.com/JoffreyLemery)")
+            
+    
+    with st.expander("Thomas Louvradoux"):
+        col1, col2, col3 = st.columns([1,0.5,1])  
+        with col1: 
+            st.image(read_image_bucket( image_path + 'LinkedIn_Logo_blank.png'),channels="RGB", output_format="auto") 
+            st.image(read_image_bucket( image_path + 'github_blank.png'),channels="RGB", output_format="auto")
+        with col3:
+            st.write("[Linkedin](https://www.linkedin.com/in/thomas-louvradoux-023b231a6/)")
+            st.write("")
+            st.write("")
+            st.write("[GitHub](https://github.com/Louvradoux)")
+
+    with st.expander("Julien Le Bot"):
+        col1, col2, col3 = st.columns([1,0.5,1])  
+        with col1: 
+            st.image(read_image_bucket( image_path + 'LinkedIn_Logo_blank.png'),channels="RGB", output_format="auto") 
+            st.image(read_image_bucket( image_path + 'github_blank.png'),channels="RGB", output_format="auto")
+        with col3:
+            st.write("[Linkedin](https://www.linkedin.com/in/julien-le-bot-133a5625//)")
+            st.write("")
+            st.write("")
+            st.write("[GitHub](https://github.com/jlebot44)")
+
+    with st.expander("Gaëtan Wendling"):
+        col1, col2, col3 = st.columns([1,0.5,1])  
+        with col1: 
+            st.image(read_image_bucket( image_path + 'LinkedIn_Logo_blank.png'),channels="RGB", output_format="auto") 
+            st.image(read_image_bucket( image_path + 'github_blank.png'),channels="RGB", output_format="auto")
+        with col3:
+            st.write("[Linkedin](https://www.linkedin.com/in/gaetan-wendling/)")
+            st.write("")
+            st.write("")
+            st.write("[GitHub](https://github.com/GaetanWendling)")
