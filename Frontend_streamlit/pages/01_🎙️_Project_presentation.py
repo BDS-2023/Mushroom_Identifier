@@ -25,7 +25,7 @@ image_team_path = ("imagemobucket/Streamlit/Team/")
 
 
 st.set_page_config(
-    page_title="Hello Mushroom-dawan",
+    page_title="Hello MushroomSeeker",
     page_icon="🍄",
     layout="wide")
 
@@ -60,13 +60,13 @@ with c4 :
 
 c1, c2, c3, c4 = st.columns(4, gap="large")
 with c1 : 
-    st.write("Joffrey est l'inventeur du VVG20.\nKeras n'a plus de secret pour lui.\nOn est jaloux de son abondance \nd'énergie. ")
+    st.write("Joffrey is a graduate engineer from France and Quebec.\nHis energy, his technical skills and his infinite thirst for knowledge bring people together around challenging projects. ")
 with c2 : 
-    st.write("Thomas à connu Albert Einstein.\nIl s'est fait voler E=MC2.\nFastAI est une formalité pour lui. ")
+    st.write("Thomas is a PhD student in Quantum physics.\nHis sharp mind and learning methodology are essential for state-of-the-art research problems such as deep learning. ")
 with c3 : 
-    st.write("Julien est un debugger hors normes.\nRédacteur en chef du rapport projet.\nHabitant de Bretagne il sait quand il \npleut avant tout le monde. ")
+    st.write("Julien is a technical manager.\nHis debugging skills, his analysis of priorities and his sense of management are strong points in group work. ")
 with c4 : 
-    st.write("Gaëtan Overflood les channels de GIF.\nC'est lui qui à ecrit ces bêtises.\nEst en train d'essayer de faire un site\njolie." )
+    st.write("Gaetan is a business genius.\nHis sense of business understanding allows him to give meaning to deep learning." )
 
 st.markdown("""---""")
 

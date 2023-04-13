@@ -47,6 +47,7 @@ df_loca_100 = read_csv(path_csvs + '/localization_top_100.csv')
 image_path = ("imagemobucket/Streamlit/Figure_project/")
 
 
+
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
@@ -67,8 +68,8 @@ st.subheader("Yes, it is the core of the projet. Give it a try !")
 
 
 
-st.subheader("Time for you to use our App and to answer you question : What kind of mushroom did I found with grand'dad !")
-image = st.file_uploader('Upload your Mushroom picture', type=['png', 'jpg', 'jpeg'], accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
+st.subheader("Time for you to use our App and to answer you question : What kind of mushroom did I found with grand'dad ?")
+image = st.file_uploader('Upload your Mushroom picture', type=['jpg', 'jpeg'], accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
 columns = st.columns((2, 1, 2))
 button = columns[1].button("Let's recognize", help='Click to start recognition', on_click=None, args=None, kwargs=None, type="primary", disabled=False)
 if button :

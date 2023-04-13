@@ -13,6 +13,7 @@ fs = s3fs.S3FileSystem(anon=False)
 
 path_imgs_best  = "imagemobucket/pic_GBIF_best_of_100"
 path_csvs = "imagemobucket/Csv"
+image_path = ("imagemobucket/Streamlit/Figure_project/")
 
 
 @st.cache_data

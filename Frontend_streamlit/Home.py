@@ -20,7 +20,7 @@ def read_file(filename):
         return f.read()
 
 st.set_page_config(
-    page_title="Hello Mushroom-dawan",
+    page_title="Hello MushroomSeeker",
     page_icon="🍄",
     layout="wide")
 
@@ -31,7 +31,7 @@ def main():
     c1,c2,c3 = st.columns([0.5,1,0.5])
     with c2: 
 
-        st.title('Welcome to :red[BDSMushroom] 👋')
+        st.title('Welcome to :red[Mushroom Identifier] 👋')
         st.title(" ")
 
     with st.container():
@@ -47,10 +47,10 @@ def main():
 
 
             st.write("") 
-            st.subheader("**Feel free to explore and use our CNN to identify your mushrooms we're really proud of this realisation.**")
+            st.subheader("**Feel free to explore and use our CNN to identify your mushrooms. We're really proud of this realisation.**")
             st.write(' ')
             st.write(' ')
-            st.subheader("Please feel free to thumbs up our [github](https://github.com/BDS-2023/Mushroom_recognition)")
+            st.subheader("Please feel free to thumbs up our [github](https://github.com/BDS-2023/Mushroom_Identifier)")
             
 
             st.markdown("""---""")

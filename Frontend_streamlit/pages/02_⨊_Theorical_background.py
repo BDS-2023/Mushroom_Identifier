@@ -8,7 +8,7 @@ import plotly.express as px
 import io
 
 st.set_page_config(
-    page_title="Hello Mushroom-dawan",
+    page_title="Hello MushroomSeeker",
     page_icon="🍄",
     layout="wide")
 
@@ -37,29 +37,29 @@ df2 = read_csv_st(df_path + "All_ranks_and_occurence.csv",sep_st=',')
 
 
 
-choice = st.sidebar.radio("Submenu", ["Introduction","Données", "Montage des machines virtuelles", "Classification", "Interprétabilité"])
+choice = st.sidebar.radio("Submenu", ["Introduction","Data", "Virtual Machines", "Classification", "Interpretability"])
 if choice == 'Introduction':
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-        st.title('Rapport de projet')
+        st.title('Project report')
         c1, c2, c3, c4 = st.columns(4, gap="large")
     st.markdown("""---""")
 
 
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.title('Contexte')
+        st.title('Context')
         st.markdown("---")
-        st.write("""Il existe différentes techniques permettant d’identifier des espèces de champignons. La plus utilisée et la plus ancienne est l'identification morphologique, qui classifie les individus par leurs caractéristiques anatomiques. Cependant, cette technique a l'inconvénient d’être limitée en termes de précision car dépendante de l'observation et du protocole d'identification de la personne qui la pratique.""")
+        st.write("""There are different techniques to identify mushroom species. The most used and oldest is the morphological identification, which classifies individuals by their anatomical characteristics. However, this technique has the disadvantage of being limited in terms of accuracy because it depends on the observation and the identification protocol of the person who performs it.""")
         st.write("")
         st.write("")
         st.write("")
-        st.write("""L’objectif du projet « Reconnaissance de champignons » était de faire de la reconnaissance automatisée de champignons au travers des technologies de Computer Vision. Il s’inscrivait dans le cadre de la formation Data Scientist dispensée par la société DataScientest et constituait pour nous une première expérience professionnelle en vue de valoriser nos connaissances et de monter en compétence dans le domaine de la Data Science. Plus précisément, ce projet s’inscrivait dans le domaine de la computer vision et avait pour objectif d’acquérir des connaissances sur les technologies de Deep Learning.""")
+        st.write("""The objective of the "Mushroom Recognition" project was to perform automated recognition of mushrooms using Computer Vision technologies. It was part of the Data Scientist training provided by the company DataScientest and was a first professional experience for us in order to enhance our knowledge and increase our competence in the field of Data Science. More precisely, this project was in the field of computer vision and had for objective to acquire knowledge on Deep Learning technologies.""")
         
-if choice == 'Données':
+if choice == 'Data':
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-        st.title('Rapport de projet')
+        st.title('Project report')
         c1, c2, c3, c4 = st.columns(4, gap="large")
     st.markdown("""---""")
 
@@ -67,22 +67,22 @@ if choice == 'Données':
 
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.title('Données')
+        st.title('Data')
         st.write("")
-        st.write("""Pour le projet nous avons travaillé avec des images téléchargées depuis les bases de données disponibles sur le site https://www.gbif.org/. GBIF est un projet scientifique visant à répertorier l’ensemble des données taxonomiques sur la biodiversité, dont le Royaume Fungi. Le portail du GBIF expose une API permettant de télécharger des photos d’espèces vivantes à partir d’une clef taxonomique. Il existe, sur le site GBIF, un fichier qui permet de lier les clefs taxonomiques aux noms des espèces ainsi qu’à leurs taxonomies complètes. Voici quelques lignes du fichier GBIF_tax.csv pour les entrées appartenant au Kingdom Fungi.""")
+        st.write("""For the project we worked with images downloaded from the databases available on the site https://www.gbif.org/. GBIF is a scientific project aiming at indexing all taxonomic data on biodiversity, including the Fungi Kingdom. The GBIF portal exposes an API allowing to download photos of living species from a taxonomic key. There is, on the GBIF site, a file that allows to link taxonomic keys to species names and their complete taxonomies. Here are some lines from the GBIF_tax.csv file for the entries belonging to the Kingdom Fungi.""")
         st.write("")
         st.write("")
         st.write("")
         expander = st.expander("Mushrooms DataFrame")
         
         expander.dataframe(df)
-        expander.write("""La colonne numberOfOccurences indique le nombre d’images disponibles pour chaque espèce. Au total la source expose environ 34 M de photos de champignons.""")
+        expander.write("""The column numberOfOccurences indicates the number of images available for each species. In total the source exposes about 34 M pictures of mushrooms.""")
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2: 
-        st.title("Exploration de données")
+        st.title("Data Exploration")
         st.write("")
-        st.write("""La première étape était de définir notre jeu de données. Il était nécessaire de définir les classes à utiliser pour entrainer un modèle. Une photo représente un champignon qui est définit par son nom ainsi que par sa taxonomie. En biologie, une taxonomie est un moyen de définir des groupes hiérarchiques basés sur des caractéristiques communes (voir figure).  Plus on descend dans un arbre taxonomique plus l’identification devient spécifique.  """)
+        st.write("""The first step was to define our dataset. It was necessary to define the classes to use to train a model. A picture represents a mushroom which is defined by its name and its taxonomy. In biology, a taxonomy is a way to define hierarchical groups based on common characteristics (see figure).  The further down a taxonomic tree you go, the more specific the identification becomes.""")
         st.write("")
         st.write("")
         st.write("")
@@ -91,7 +91,7 @@ if choice == 'Données':
         st.image(read_image_bucket( image_path + 'tax_black.png'),channels="RGB", output_format="auto")
     st.markdown("""---""")
     with col7: 
-        st.write("""Dans le tableau nous trouvons la colonne taxonRank qui indique le dernier niveau atteint dans l’identification des photos des champignons pour une certaine taxonKey. A chaque rang taxonomique (ex : Family) nous trouvons un certain nombre de classe, nombre qui augmente exponentiellement lorsque nous descendons dans l’arbre. La figure ci-dessous est un sunburst représentant l’ensemble des rangs taxonomique (en partant du Kingdom Fungi) ainsi que l’ensemble des classes dans chaque rang.""")
+        st.write("""In the table we find the column taxonRank which indicates the last level reached in the identification of the fungi pictures for a certain taxonKey. At each taxon rank (e.g. Family) we find a certain number of classes, a number that increases exponentially as we go down the tree. The figure below is a sunburst representing all the taxonomic ranks (starting from Kingdom Fungi) as well as all the classes in each rank.""")
     st.write("")
     st.write("")
 
@@ -105,26 +105,26 @@ if choice == 'Données':
     with col2:
         
 
-        st.write("La figure ci-dessous, quant à elle, représente le nombre de classes disponibles dans chaque rang taxonomique.")
+        st.write("The figure below represents the number of classes available in each taxonomic rank.")
               
     c1,c2,c3 = st.columns([0.5,1,0.5])
     with c2:
         df_forbar = df2.groupby("rank").count().sort_values(by='occurence')
         df_forbar['rank'] = df_forbar.index.values
         fig3 = px.bar(data_frame=df_forbar,x='rank',y='occurence',barmode='group',log_y=True,hover_data=["occurence"],
-             labels={'rank':'Rang taxonomique','occurence':'Nombre de taxons'},title="Nombre de taxons à chaque rang taxonomique")
+             labels={'rank':'Taxonomic rank','occurence':'Number of taxa'},title="Number of taxa at each taxonomic rank")
         st.plotly_chart(fig3)
 
         st.write("")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:
-        st.write("""Ces figures permettent de mettre en avant une des principales problématiques du projet : le nombre faramineux d’espèces de champignons différentes. En effet, sur GBIF, nous trouvons 117 539 espèces de champignon. Une étude de l’état de l’art sur la classification par Computer Vision montre qu’un modèle capable d’identifier autant de classes est aujourd’hui hors de portée technologiquement parlant.""")
+        st.write("""These figures highlight one of the main problems of the project: the huge number of different mushroom species. Indeed, on GBIF, we find 117 539 species of mushrooms. A study of the state of the art on classification by Computer Vision shows that a model capable of identifying so many classes is currently out of reach technologically speaking.""")
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:  
         st.write("")
         st.write("")
-        st.write("""Afin de réduire le nombre de classe disponible, il peut paraître judicieux de se placer haut dans l’arbre taxonomique. Par exemple, il existe uniquement 7 Phylums différents pour les champignons. Cependant, en travaillant haut dans l’arbre taxonomique, nous nous retrouvons avec des classes très générales, dans lesquelles les champignons peuvent être très différents. Un exemple est donné dans la figure ci-dessous sur laquelle nous présentons deux champignons appartenant à la même Family : Agaricaceae.  """)
+        st.write("""In order to reduce the number of classes available, it may seem wise to move up the taxonomic tree. For example, there are only 7 different Phyla for fungi. However, by working high in the taxonomic tree, we end up with very general classes, in which the fungi can be very different. An example is given in the figure below where we present two fungi belonging to the same Family: Agaricaceae.""")
     st.write("")
     st.write("")
     col5, col6, col7 = st.columns([0.5,8,0.5])
@@ -133,11 +133,10 @@ if choice == 'Données':
     
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:
-        st.write("""Nous avons estimé que travailler avec de telles données pourrait rendre l’apprentissage très difficile, car nous demandons au modèle de regrouper dans la même classe des images très différentes.  """)
+        st.write("""We felt that working with such data could make learning very difficult, as we are asking the model to group very different images into the same class.""")
         st.write("")
         st.write("")
-        st.write("""Finalement, nous avons décidé de travailler à la maille Species afin d’avoir, dans une même classe, des champignons qui se ressemblent, même si cela entraine une augmentation du nombre de classes disponibles. Pour le nombre de classes, nous nous sommes fixés comme objectif de travailler avec les 100 classes les plus représentées dans GBIF. La figure ci-dessous montre le nombre d’images disponibles pour chacune de ces classes.
-""")
+        st.write("""Finally, we decided to work on the Species mesh in order to have, in the same class, mushrooms that are similar, even if this leads to an increase in the number of available classes. For the number of classes, we set ourselves the goal of working with the 100 most represented classes in GBIF. The figure below shows the number of images available for each of these classes.""")
     st.write("")
     st.write("")
     
@@ -148,61 +147,62 @@ if choice == 'Données':
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:
-        st.write("""Ici, nous voyons que le nombre d’images disponible ne posera pas de problème. Il est même nécessaire de se restreindre afin de pouvoir entrainer des modèles sur nos machines dans des temps acceptables. Nous avons donc choisi de travailler avec environ 500 images par espèces, soit un total de 50000 images.""")
+        st.write("""Here we see that the number of images available will not be a problem. It is even necessary to restrict ourselves in order to be able to train models on our machines in acceptable times. We have therefore chosen to work with about 500 images per species, i.e. a total of 50,000 images.""")
     
     dft = df2 
     dft_temp = dft[dft['rank'] == 'Species'].head(100)
     fig4 = px.bar(data_frame=dft_temp,x='name',y='occurence',barmode='group',log_y=False,hover_data=["occurence"],color="occurence",
-             labels={'name':'Taxon','occurence':"Nombre d'images"},title="Nombre d'images disponibles pour les 100 premiers taxon du rang Species", height=800, width=1400)
+             labels={'name':'Taxa','occurence':"Number of image"},title="Number of images available for the first 100 taxa of the Species rank", height=800, width=1400)
     st.plotly_chart(fig4)
 
 
-if choice == 'Montage des machines virtuelles':
+if choice == 'Virtual Machines':
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-        st.title('Rapport de projet')
+        st.title('Project report')
     st.markdown("""---""")
-    expander3 = st.expander("Dans le cadre de notre projet voici le modèle de machine virtuelle que nous avons souhaité développer :") 
-    with st.expander("Dans le cadre de notre projet voici le modèle de machine virtuelle que nous avons souhaité développer :") :
+    expander3 = st.expander("Within the framework of our project, here is the virtual machine model that we wanted to develop:") 
+    with st.expander("Within the framework of our project, here is the virtual machine model that we wanted to develop:") :
         col1, col2, col3 = st.columns([0.5,2,0.5])
         with col2:
             st.image(read_image_bucket( image_path + 'DE_big.png'),channels="RGB", output_format="auto", use_column_width = 'auto')
             """
 * Frontend : 
-  * Streamlit permettant la réception d'image classifier
+  * Streamlit allowing the reception of image classifier
     * Host = EC2 Public
 * Backend : 
-  * Classification des photos reçues par le Streamlit
-    * Host = EC2 Privé
-        * Télechargement des images de la base MO
-        * Télechargement des images de la base GBIF
-        * Mise à jour des données reçues sur la base MO
-        * Calculs des modèles de prédiction NVIDIA
+  * Classification of photos received by the Streamlit and data processing
+    * Host = EC2 Privé 
+        * Downloading images from the MO database
+        * Downloading images from the GBIF database
+        * Update of the data received on the MO base
+        * Prediction of a taxonomy
+    * Host = EC2 Privé Nvidia
+        * NVIDIA prediction model calculations
 """
 
     st.markdown("""---""")
 
-    expander3 = st.expander("Pour optimiser notre temps sur les modèles, nous avons finalement effectué cette architecture :") 
-    with st.expander("Pour optimiser notre temps sur les modèles, nous avons finalement effectué cette architecture :") :
+    expander3 = st.expander("To optimize our time on the models, we finally performed this architecture:") 
+    with st.expander("To optimize our time on the models, we finally performed this architecture:") :
         col1, col2, col3 = st.columns([0.5,2,0.5])
         with col2:
             st.image(read_image_bucket( image_path + 'DE_small.png'),channels="RGB", output_format="auto", use_column_width = 'auto')
             """
 * Frontend : 
-  * Streamlit permettant la réception d'image classifier
+  * Streamlit allowing the reception of image classifier
     * Host = EC2 Public
 * Backend : 
-  * Classification des photos reçues par le Streamlit
+  * Classification of photos received by the Streamlit and data processing
     * Host = EC2 Privé
-        * Télechargement des images de la base GBIF
-        * Mise à jour des données reçues sur la base MO
+        * Prediction of a taxonomy
 """
 
 
 if choice == 'Classification':
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-        st.title('Rapport de projet')
+        st.title('Project report')
         c1, c2, c3, c4 = st.columns(4, gap="large")
     st.markdown("""---""")
 
@@ -210,15 +210,14 @@ if choice == 'Classification':
 
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.title('Méthodes')
+        st.title('Methods')
         st.write("")
-        st.write("""Comme mentionné précédemment, ce projet vise à identifier des images de champignons. Ce procédé est un problème typique de classification d'images, généralement traité par des méthodes de Deep Learning et plus spécifiquement à l’aide de réseaux de neurones convolutifs (CNN). De plus, il est aujourd’hui d’usage d’utiliser les méthodes d’apprentissage par transfert (transfer learning) afin de réduire considérablement le temp d’entrainement des modèles.""")
-        st.write("")
-        st.write("")
+        st.write("""As mentioned before, this project aims at identifying images of mushrooms. This process is a typical image classification problem, usually treated by Deep Learning methods and more specifically by convolutional neural networks (CNN). Moreover, it is nowadays usual to use transfer learning methods in order to reduce considerably the training time of the models.""")
         st.write("")
         st.write("")
-        st.write("""Le principe est simple, nous utilisons le savoir acquis par des modèles entrainés sur des machines très puissantes et pendant des temps longs pour une tâche particulière afin de résoudre un problème différent mais qui présente des similitudes. Pour les CNN, il existe aujourd’hui de nombreux modèles (VGG, MobileNet, ResNet, DenseNet, etc.) qui ont été entraînés sur le jeu de données ImageNet, composé de 1000 classes et de 1 281 167 images. Le principe de l’apprentissage par transfert (représenté sur la figure ci-dessous) est d’interfacer la partie convolutive des modèles dit pré-entraînés ainsi que leurs poids avec notre propre classifieur (couches de neurones denses dans notre cas), adapté à notre problème. Nous utilisons alors la partie convolutive du modèle comme extracteur de features déjà très bien entraîné, permettant ainsi d’obtenir rapidement de bons résultats.
-""")
+        st.write("")
+        st.write("")
+        st.write("""The principle is simple, we use the knowledge acquired by models trained on very powerful machines and for long times for a particular task to solve a different problem but with similarities. For CNNs, there are now many models (VGG, MobileNet, ResNet, DenseNet, etc.) that have been trained on the ImageNet dataset, consisting of 1000 classes and 1281,167 images. The principle of transfer learning (shown in the figure below) is to interface the convolutional part of the so-called pre-trained models as well as their weights with our own classifier (dense neural layers in our case), adapted to our problem. We then use the convolutional part of the model as a feature extractor already well trained, allowing us to quickly obtain good results.""")
     st.markdown("""---""")
     col1, col2, col3 = st.columns([1,6,1])    
     with col2:
@@ -227,16 +226,16 @@ if choice == 'Classification':
         st.write("")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:  
-        st.write("""L’entrainement d’un tel modèle se fait généralement de la manière suivante, on commence par entraîner uniquement la partie classificatrice en gelant (freeze) les poids de la partie convolutive (qui sont normalement quasi-optimaux), cette partie est nommée tuning. Une fois le classificateur bien entraîné, nous dégelons (unfreeze) les couches (par paquets ou toutes d’un coup) puis nous continuons l’entraînement, cette partie est nommée fine-tuning. De plus, nous utilisons un learning rate plus faible lors de cette phase afin d’ajuster plus finement les poids déjà quasi-optimaux.""")
+        st.write("""The training of such a model is generally done in the following way, we start by training only the classifier part by freezing the weights of the convolutional part (which are normally almost optimal), this part is called tuning. Once the classifier is well trained, we unfreeze the layers (by packets or all at once) and then we continue training, this part is called fine-tuning. Moreover, we use a lower learning rate during this phase in order to fine-tune the weights that are already near-optimal.""")
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2: 
         st.title("Preprocessing")
         st.write("")
-        st.write("""Les modèles pré-entrainés que l’on utilise ont été entrainés sur des images d’un format spécifique. Pour que le transfer learning ait du sens, il était indispensable d’utiliser ce même format pour nos images. Ainsi, nos images sont toujours redimensionnées à la taille 224x224 (valeur couramment utilisée pour les modèles pré-entrainés), la valeur des pixels est rééchelonnées entre 0 et 1 puis les 3 canaux RGB sont renormalisés pour observer la même distribution que les images de ImageNet, i.e.  et .""")
+        st.write("""The pre-trained models we use have been trained on images of a specific format. For the transfer learning to make sense, it was essential to use this same format for our images. Thus, our images are always resized to the size 224x224 (value commonly used for the pre-trained models), the pixel values are rescaled between 0 and 1 and the 3 RGB channels are renormalized to observe the same distribution as the ImageNet images, i.e.""")
         st.write("")
         st.write("")
-        st.write("""Un des principaux défauts des modèles de Deep Learning est qu’ils ont tendance à overfit en raison du très grand nombre de paramètres. Une des solutions pour pallier ce problème est le Data Augmentation. Cette pratique consiste à dégrader les images du jeu d’entrainement afin de permettre au modèle de généraliser le plus possible. Il existe de nombreuses techniques de Data Augmentation, parmi les plus courantes, nous retrouvons la rotation, la translation, le retournement, le floutage, etc. Ci-dessous, nous présentons un exemple de Data Augmentation que nous avons utilisés sur nos images. """)
+        st.write("""One of the main drawbacks of Deep Learning models is that they tend to overfit due to the very large number of parameters. One solution to this problem is Data Augmentation. This practice consists in degrading the images of the training set to allow the model to generalize as much as possible. There are many techniques of Data Augmentation, among the most common, we find the rotation, translation, flipping, blurring, etc.. Below, we present an example of Data Augmentation that we used on our images.""")
         st.write("")
         st.write("")
         
@@ -249,7 +248,7 @@ if choice == 'Classification':
     with col2: 
         st.title("Architecture")
         st.write("")
-        st.write("""Dans le cadre du transfer learning, la partie convolutive du modèle est déterminée par le modèle pré-entrainé que nous allons utiliser. Cependant, il reste à définir l’architecture de la partie Classifieur. Dans notre cas, nous avons choisi de travailler avec des réseaux de neurones denses. Nous avons ensuite réalisé un travail d’optimisation de l’architecture qui a consisté à tester différentes configurations afin de trouver celle qui donne les meilleurs résultats (notons qu’une telle étude doit être faite après le choix du modèle pré-entrainé). Les travaux effectués sont présentés en détail dans notre rapport (disponible ici). Dans le cadre de notre projet nous avons testé deux modèles pré-entrainés : VGG19 et DenseNet161. Nous présentons dans la figure ci-dessous l’architecture retenue pour le modèle VGG19 et DenseNet161.""")
+        st.write("""In the context of transfer learning, the convolutional part of the model is determined by the pre-trained model that we will use. However, we still have to define the architecture of the classifier part. In our case, we have chosen to work with dense neural networks. We then carried out a work of optimization of the architecture which consisted in testing different configurations in order to find the one which gives the best results (note that such a study must be done after the choice of the pre-trained model). The work done is presented in detail in our report (available here). In our project we tested two pre-trained models: VGG19 and DenseNet161. We present in the figure below the architecture chosen for the VGG19 and DenseNet161 models.""")
         st.write("")
         st.write("")
     expander = st.expander("Architecture")
@@ -264,15 +263,14 @@ if choice == 'Classification':
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2: 
-        st.title("Hyperparamètres")
+        st.title("Hyperparameters")
         st.write("")
-        st.write("""Les performances des modèles sont intrinsèquement liées à la bonne sélection de ses hyperparamètres. Plusieurs hyperparamètres ont été testés et les résultats sont présentés dans le rapport. Nous allons revenir dans la suite sur l’hyperparamètre le plus important : le learning rate.""")
+        st.write("""The performance of the models is intrinsically linked to the correct selection of its hyperparameters. Several hyperparameters have been tested and the results are presented in the report. We will come back to the most important hyperparameter in the following: the learning rate.""")
         st.write("")
         st.write("")
     col5, col6, col7, col8 = st.columns([0.5,4,4,0.5])
     with col7:
-        st.write("""Le choix d'un learning rate optimal dépend de la topologie de la fonction de perte, qui est elle-même fonction de l'ensemble des données et de l'architecture. Pour trouver le learning rate optimal, il est possible de réaliser plusieurs expériences et d'analyser les résultats un par un. Cependant, cela prend beaucoup de temps. Heureusement, dans Fastai, il existe une fonction de recherche de learning rate appelée lr_find, qui effectue essentiellement une expérience simple où le learning rate est progressivement augmenté après chaque mini batch, tout en enregistrant la fonction de perte à chaque itération. La représentation graphique des pertes en fonction du taux d'apprentissage nous donnera une idée de l'évolution de la fonction de perte et pourra être utilisée comme point de départ pour trouver notre taux d'apprentissage optimal. La figure suivante montre la courbe obtenu grâce à la fonction lr_find. 
- """)
+        st.write("""The choice of an optimal learning rate depends on the topology of the loss function, which in turn depends on the data set and the architecture. To find the optimal learning rate, it is possible to perform several experiments and analyze the results one by one. However, this is very time consuming. Fortunately, in Fastai, there is a learning rate search function called lr_find, which essentially performs a simple experiment where the learning rate is gradually increased after each mini-batch, while recording the loss function at each iteration. The graphical representation of the losses as a function of the learning rate will give us an idea of the evolution of the loss function and can be used as a starting point to find our optimal learning rate. The following figure shows the curve obtained with the lr_find function. """)
         st.write("")
         st.write("")
        
@@ -282,12 +280,12 @@ if choice == 'Classification':
 
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2: 
-        st.title("Entrainement")
+        st.title("Training")
         st.write("")
-        st.write("""L’architecture et les hyperparamètres ayant été optimisé, nous pouvions entreprendre l’entrainement du modèle. Après l’avoir testé, nous avons choisis d’utiliser une méthode particulière de learning rates scheduler (fonction qui permet de changer le learning rate au cours de l’entrainement) nommé one cycle fit, disponible dans la bibliothèque Fastai, et décrite dans l’article de 2018 de Smith et al. [https://arxiv.org/pdf/1708.07120.pdf].""")
+        st.write("""The architecture and the hyperparameters having been optimized, we could undertake the training of the model. After testing it, we chose to use a particular method of learning rates scheduler (function that allows to change the learning rate during the training) named one cycle fit, available in the Fastai library, and described in the 2018 paper of Smith et al. [https://arxiv.org/pdf/1708.07120.pdf].""")
         st.write("")
         st.write("")
-        st.write("""Le principe est d’augmenter puis de diminuer le learning rate au cours de l’entrainement comme représenté sur la figure ci-dessous.""")
+        st.write("""The principle is to increase and decrease the learning rate during training as shown in the figure below.""")
         st.write("")
         st.write("")
     col5, col6, col7, col8 = st.columns([0.5,4,4,0.5])
@@ -295,7 +293,7 @@ if choice == 'Classification':
         st.write("")
         st.write("")
         st.write("")
-        st.write("""Cette méthode permet de faire converger les modèles plus rapidement et permet d’explorer des learning rate plus grands au cours de l’entrainement (le  peut être un ordre de grandeur plus grand que le learning rate optimal) ce qui constitue une méthode de régularisation réduisant l’overfitting. Cette méthode a été utilisée pour le modèle Densenet161 (entrainé sur Fastai). Pour le modèle VGG19 (entrainé sur Keras) nous avons utilisé un scheduler qui diminue le learning rates petit à petit au cours de l’entrainement. """)
+        st.write("""This method allows the models to converge more quickly and to explore larger learning rates during training (the can be an order of magnitude larger than the optimal learning rate) which is a regularization method reducing overfitting. This method was used for the Densenet161 model (trained on Fastai). For the VGG19 model (trained on Keras) we used a scheduler that decreases the learning rates little by little during the training.""")
         st.write("")
         st.write("")  
     with col6:
@@ -304,11 +302,11 @@ if choice == 'Classification':
     
     col1, col2, col3 = st.columns([0.5,8,0.5])    
     with col2: 
-        st.write("""Finalement, nous avons entrainés notre modèle avec les paramètres suivants :""")
-        expander = st.expander("Résultats")
+        st.write("""Finally, we trained our model with the following parameters:""")
+        expander = st.expander("Results")
     col1, col2, col3 = st.columns([1,2,1])    
     with col2:
-        with st.expander("Résultats"):
+        with st.expander("Results"):
             tab1,tab2= st.tabs(["VGG19", "Densenet161"])
             with tab2: 
                 st.image(read_image_bucket( image_path + 'train_densenet.png'),channels="RGB", output_format="auto")
@@ -322,10 +320,10 @@ if choice == 'Classification':
     
     c1,c2,c3 = st.columns([0.5,8,0.5])
     with c2: 
-        st.write("""La figure ci-dessous montre l’évolution des loss, validation loss et validation accuracy au cours de l’entrainement. Nous observons que le modèle overfit légèrement en fin d’entrainement. Le résultat final obtenu est une Top-1 Accuracy de 86.2% et une Top-5 Accuracy de 96.3% sur le jeu de validation et Top-1 Accuracy de 88.2% et une Top-5 Accuracy de 97.2% sur un jeu de test constitué de 2917 images réparties équilibrèrent entre chaque classe.""")
+        st.write("""The figure below shows the evolution of the loss, validation loss and validation accuracy during the training. We observe that the model overfits slightly at the end of the training. The final result obtained is a Top-1 Accuracy of 86.2% and a Top-5 Accuracy of 96.3% on the validation set and a Top-1 Accuracy of 88.2% and a Top-5 Accuracy of 97.2% on a test set made of 2917 images distributed evenly between each class.""")
 
-    expander = st.expander("Résultats")
-    with st.expander("Résultats"):
+    expander = st.expander("Results")
+    with st.expander("Results"):
         tab1,tab2= st.tabs(["Densenet", "VGG19"])
         with tab1: 
             c1,c2,c3 = st.columns([1,6,1])
@@ -341,19 +339,19 @@ if choice == 'Classification':
         st.image(read_image_bucket( image_path + 'comp_vgg_dense.png'),channels="RGB", output_format="auto", width=500)
     st.markdown("""---""")
 
-if choice == 'Interprétabilité':
+if choice == 'Interpretability':
     col1, col2, col3 = st.columns([1,2,1])
     with col2:
-        st.title('Rapport de projet')
+        st.title('Project report')
         c1, c2, c3, c4 = st.columns(4, gap="large")
     st.markdown("""---""")
 
 
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.title('Interprétabilité du modèle')
+        st.title('Interpretability of the model')
         st.write("")
-        st.write("""Nous avons mis en place deux outils afin de tenter de comprendre comment le modèle identifie un champignon sur une image : le grad-CAM et le Guided Backpropagation. Ci-dessous nous montrons ces deux outils en action.""")
+        st.write("""We have implemented two tools to try to understand how the model identifies a fungus on an image: the grad-CAM and the Guided Backpropagation. Below we show these two tools in action.""")
         st.write("")
         st.write("")
         st.image(read_image_bucket( image_path + 'top_amanita.png'),channels="RGB", output_format="auto")
@@ -361,32 +359,32 @@ if choice == 'Interprétabilité':
     with col2: 
         st.write("")  
         st.write("")  
-        st.write("""Le grad-CAM est une méthode basse résolution très discriminante en termes de classe qui permet rapidement de voir que le modèle ne regarde pas autre chose que le champignon. Le Guided Backpropagation, quant à lui, est à haute résolution mais ne permet pas de discriminer les classes (il met en valeur les pixels important lors de la prédiction). Ces outils nous on permis de valider le modèle et, dans certaines situations, de comprendre les mauvaises prédictions du modèle comme nous allons le voir dans la suite.""")
+        st.write("""The grad-CAM is a low-resolution method that is very discriminating in terms of class and allows us to quickly see that the model does not look at anything other than the mushroom. The Guided Backpropagation, on the other hand, is high resolution but does not discriminate between classes (it highlights the important pixels during the prediction). These tools allowed us to validate the model and, in some situations, to understand the bad predictions of the model as we will see in the following.""")
         st.write("")
         st.write("")
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.title('Interprétabilité des résultats')
+        st.title('Interpretability of results')
         st.write("")
-        st.write("""Le rapport de classification ci-dessus montre des résultats assez hétérogènes, certaines classes sont très bien prédites alors que d’autres le sont moins""")
+        st.write("""The above classification report shows quite heterogeneous results, some classes are very well predicted while others are less so.""")
         st.write("")
         st.write("")
-        st.write("""La matrice de confusion (difficilement affichable pour 100 classes) permet de trouver les classes les plus confuses. Le tableau ci-dessous montre les 5 premiers éléments non diagonaux les plus grands, nous donnons le vrai label, la prédiction ainsi que le nombre d’occurrences.""")
+        st.write("""The confusion matrix (hardly displayable for 100 classes) allows to find the most confused classes. The table below shows the first 5 largest non-diagonal elements, we give the true label, the prediction and the number of occurrences.""")
 
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.write("""Une exploration des images disponibles montre que ces espèces se ressemblent morphologiquement. Ce qui explique pourquoi le modèle peine à bien les distinguer. La figure ci-dessous montre les similitudes entre ces classes.""")
+        st.write("""An exploration of the available images shows that these species are morphologically similar. This explains why the model struggles to distinguish them well. The figure below shows the similarities between these classes.""")
         st.write("")
         st.write("")
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2:   
-        st.write("""Une autre raison qui limite les résultats du modèle sont les images mal labelisées. Soit le champignon sur l’image ne correspond pas au label, soit il est très difficile voire impossible de le distinguer sur l’image. Voici quelques exemples.""")
+        st.write("""Another reason that limits the results of the model are poorly labeled images. Either the mushroom in the image does not match the label, or it is very difficult or impossible to distinguish it in the image. Here are some examples.""")
         st.write("")
         st.write("")
-        expander = st.expander("Exemples")
-        with st.expander("Exemples"): 
+        expander = st.expander("Examples")
+        with st.expander("Examples"): 
             tab1, tab2, tab3 = st.tabs(["top_loss_1", "top_loss_2", "top_loss_3"])
             with tab1:
                 c1,c2,c3 = st.columns([0.5,2,0.5])
@@ -394,10 +392,10 @@ if choice == 'Interprétabilité':
                     st.image(read_image_bucket( image_path + 'top_loss_1.png'),channels="RGB", output_format="auto")
                 st.write("")
                 st.write("")
-                st.subheader("Interprétation ")
+                st.subheader("Interpretation")
                 st.write("")
                 st.write("")
-                st.write("""Ici on ne sait pas vraiment s’il y a un champignon sur l’image. Le modèle fait tout de même une prédiction avec une probabilité de 77%. L’outil Guided Backpropagtion permet de comprendre la prédiction. En effet, le modèle semble se concentrer sur des feuilles, dont la forme ressemble fortement à la classe prédite.""")
+                st.write("""Here we don't really know if there is a mushroom on the image. However, the model makes a prediction with a probability of 77%. The Guided Backpropagtion tool allows to understand the prediction. Indeed, the model seems to focus on leaves, whose shape strongly resembles the predicted class.""")
             
             with tab2:
                 c1,c2,c3 = st.columns([0.5,2,0.5])
@@ -405,10 +403,10 @@ if choice == 'Interprétabilité':
                     st.image(read_image_bucket( image_path + 'top_loss_2.png'),channels="RGB", output_format="auto")
                 st.write("")
                 st.write("")
-                st.subheader("Interprétation  ")
+                st.subheader("Interpretation  ")
                 st.write("")
                 st.write("")
-                st.write("""Ici l’image semble mal labélisée. Le champignon ne ressemble pas aux autres champignons de même label. Cependant, nous observons des similitudes avec les champignons de la classe prédite.""")
+                st.write("""Here the image looks badly labeled. The mushroom does not look like other mushrooms of the same label. However, we observe similarities with the mushrooms of the predicted class.""")
             
             with tab3:
                 c1,c2,c3 = st.columns([0.5,2,0.5])
@@ -416,8 +414,8 @@ if choice == 'Interprétabilité':
                     st.image(read_image_bucket( image_path + 'top_loss_3.png'),channels="RGB", output_format="auto")
                 st.write("")
                 st.write("")
-                st.subheader("Interprétation  ")
+                st.subheader("Interpretation  ")
                 st.write("")
                 st.write("")
-                st.write("""Ici il y a deux champignons différents sur l’image. Le grad-CAM permet de de voir que le modèle fait une prédiction sur le champignon orange qui semble correct. Cependant, l’image a été  labelisée Exidia glandulosa (champignon noir). Ce qui explique pourquoi cette image est mal prédite.""")
+                st.write("""Here there are two different mushrooms on the image. The grad-CAM allows us to see that the model makes a prediction on the orange fungus which seems correct. However, the image has been labeled Exidia glandulosa (black mushroom). This explains why this image is predicted incorrectly.""")
 
