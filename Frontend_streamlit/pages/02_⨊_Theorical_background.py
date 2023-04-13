@@ -172,12 +172,12 @@ if choice == 'Virtual Machines':
     * Host = EC2 Public
 * Backend : 
   * Classification of photos received by the Streamlit and data processing
-    * Host = EC2 Privé 
+    * Host = EC2 Private 
         * Downloading images from the MO database
         * Downloading images from the GBIF database
         * Update of the data received on the MO base
         * Prediction of a taxonomy
-    * Host = EC2 Privé Nvidia
+    * Host = EC2 Private Nvidia
         * NVIDIA prediction model calculations
 """
 
@@ -194,7 +194,7 @@ if choice == 'Virtual Machines':
     * Host = EC2 Public
 * Backend : 
   * Classification of photos received by the Streamlit and data processing
-    * Host = EC2 Privé
+    * Host = EC2 Private
         * Prediction of a taxonomy
 """
 
