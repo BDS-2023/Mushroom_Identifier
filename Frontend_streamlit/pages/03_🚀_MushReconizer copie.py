@@ -62,10 +62,13 @@ div.stButton > button:hover {
 
 path_image = 'imagemobucket/pic_GBIF_100_300/test/'
 
+st.set_page_config(
+    page_title="Hello MushroomSeeker",
+    page_icon="🍄",
+    layout="wide")
 
 st.title("Mushroom's Recognition App")
 st.subheader("Yes, it is the core of the projet. Give it a try !")
-
 
 
 st.subheader("Time for you to use our App and to answer you question : What kind of mushroom did I found with grand'dad ?")

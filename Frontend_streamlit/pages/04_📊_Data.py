@@ -40,7 +40,10 @@ def read_image_bucket(filename):
 df_loca_100 = read_csv(path_csvs + '/localization_top_100.csv')
 df_taxon = read_csv(path_csvs + '/Taxon_100.csv')
 
-
+st.set_page_config(
+    page_title="Hello MushroomSeeker",
+    page_icon="🍄",
+    layout="wide")
 
 st.title("Take a look at the Data")
 st.header("The model is currently working with 100 class")
