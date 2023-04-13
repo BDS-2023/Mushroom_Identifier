@@ -8,9 +8,13 @@ from streamlit_folium import st_folium,folium_static
 import s3fs
 import os
 
+
+st.set_page_config(
+    page_title="Hello MushroomSeeker",
+    page_icon="🍄",
+    layout="wide")
+
 fs = s3fs.S3FileSystem(anon=False)
-
-
 path_imgs_best  = "imagemobucket/pic_GBIF_best_of_100"
 path_csvs = "imagemobucket/Csv"
 image_path = ("imagemobucket/Streamlit/Figure_project/")
@@ -39,11 +43,6 @@ def read_image_bucket(filename):
 
 df_loca_100 = read_csv(path_csvs + '/localization_top_100.csv')
 df_taxon = read_csv(path_csvs + '/Taxon_100.csv')
-
-st.set_page_config(
-    page_title="Hello MushroomSeeker",
-    page_icon="🍄",
-    layout="wide")
 
 st.title("Take a look at the Data")
 st.header("The model is currently working with 100 class")

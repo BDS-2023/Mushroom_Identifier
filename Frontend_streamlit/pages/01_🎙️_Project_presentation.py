@@ -6,6 +6,11 @@ import base64
 import s3fs
 import io
 
+st.set_page_config(
+    page_title="Hello MushroomSeeker",
+    page_icon="🍄",
+    layout="wide")
+
 fs = s3fs.S3FileSystem(anon=False)
 image_path = ("imagemobucket/Streamlit/Figure_project/")
 df_path = ("imagemobucket/Csv/")
@@ -23,13 +28,7 @@ def read_file(filename):
 
 image_team_path = ("imagemobucket/Streamlit/Team/")
 
-
-st.set_page_config(
-    page_title="Hello MushroomSeeker",
-    page_icon="🍄",
-    layout="wide")
-
-        
+      
 st.markdown("<h3 style='text-align: center;'>This is our team. We are glad to host you !</h3>", unsafe_allow_html=True)
 
 

@@ -8,6 +8,11 @@ import s3fs
 import random
 import os
 
+st.set_page_config(
+    page_title="Hello MushroomSeeker",
+    page_icon="🍄",
+    layout="wide")
+
 @st.cache_data(ttl=600)
 def load_image(image_file):
     img = Image.open(image_file)
@@ -61,11 +66,6 @@ div.stButton > button:hover {
 </style>""", unsafe_allow_html=True)
 
 path_image = 'imagemobucket/pic_GBIF_100_300/test/'
-
-st.set_page_config(
-    page_title="Hello MushroomSeeker",
-    page_icon="🍄",
-    layout="wide")
 
 st.title("Mushroom's Recognition App")
 st.subheader("Yes, it is the core of the projet. Give it a try !")

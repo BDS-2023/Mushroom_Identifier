@@ -256,10 +256,10 @@ if choice == 'Classification':
         col1, col2, col3 = st.columns([1,5,1])    
         with col2:
             st.subheader("DenseNet")
-            st.image(read_image_bucket( image_path + 'Densenet161.png'),channels="RGB", output_format="auto", width=1000)
+            st.image(read_image_bucket( image_path + 'Densenet161.png'),channels="RGB", output_format="auto", use_column_width = 'auto')
             st.write("")
             st.subheader("VGG19")
-            st.image(read_image_bucket( image_path + 'VGG19.png'),channels="RGB", output_format="auto", width=1000)
+            st.image(read_image_bucket( image_path + 'VGG19.png'),channels="RGB", output_format="auto", use_column_width = 'auto')
     st.markdown("""---""")
     col1, col2, col3 = st.columns([0.5,8,0.5])
     with col2: 
